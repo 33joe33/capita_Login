@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sceen_switch.SceneController">
+   <children>
+      <Button layoutX="288.0" layoutY="241.0" mnemonicParsing="false" onAction="#Register" text="Register" />
+      <Label layoutX="181.0" layoutY="37.0" text="Capita" textFill="#4b3fa6">
+         <font>
+            <Font size="73.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Username" layoutX="198.0" layoutY="144.0" promptText="Username" />
+      <PasswordField fx:id="Password" layoutX="198.0" layoutY="187.0" promptText="Password" />
+    <Button layoutX="206.0" layoutY="241.0" mnemonicParsing="false" onAction="#onButtonClick" text="Login" />
+      <Label fx:id="error" layoutX="196.0" layoutY="213.0" prefHeight="15.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

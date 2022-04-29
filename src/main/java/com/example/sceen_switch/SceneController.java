@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class SceneController {
-
+//creating variables for each object on the scenes
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -33,12 +33,19 @@ public class SceneController {
     private TextField Username;
     @FXML
     private TextField Password;
-@FXML
-private Label NewUserErr;
+    @FXML
+    private Label NewUserErr;
     @FXML
     protected void onButtonClick() throws InterruptedException {
+        /*function called on click of login button that checks that the user is admin and whether they have entered a
+        username.
+        Ignoring capitalisation in username and setting a lable's text to help user identify whether their login
+        attempt was successful.
+        also resets field values if incorrect
 
+        */
         int counter = functions_for_auth.counter.get();
+
         functions_for_auth.counter.inc();
         functions_for_auth.user admin = new functions_for_auth.user("admin", "Password1234");
 
@@ -68,6 +75,12 @@ private Label NewUserErr;
 
 
     public void AddUser(ActionEvent event) throws IOException {
+        /*
+        function called when the add user button is pressed.
+        this checks whether they have entered a valid username and password.
+        displaying information invalid username and password uses so that they can be updated.
+        stores the username in a NewUser  User record.
+         */
         String NUsername = NewUsername.getText();
         String NPassword =NewPassword.getText();
         String CNPassword=CNewPassword.getText();
@@ -93,7 +106,9 @@ private Label NewUserErr;
     }
 
     public void Register(ActionEvent event) throws IOException {
-
+/*
+function used to change scene for the registration scene
+ */
         Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
